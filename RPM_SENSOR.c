@@ -1,8 +1,9 @@
-#define TIMING_EVENT_PERIOD_MS ;
-#define TIRE_CIRCUMFERENCE_KM_FL ;
-#define TIRE_CIRCUMFERENCE_KM_FR ;
-#define TIRE_CIRCUMFERENCE_KM_RL ;
-#define TIRE_CIRCUMFERENCE_KM_RR ;
+/* Enter appropriate values for predefined macros */
+#define TIMING_EVENT_PERIOD_MS 		0;
+#define TIRE_CIRCUMFERENCE_KM_FL 	0;
+#define TIRE_CIRCUMFERENCE_KM_FR 	0;
+#define TIRE_CIRCUMFERENCE_KM_RL 	0;
+#define TIRE_CIRCUMFERENCE_KM_RR 	0;
 
 float TireVelocityKmph[4] = {0};
 int TireRevolutionCounter[4] = {0};
@@ -25,7 +26,7 @@ int business_logic_change_name(int TirePosition)
 {
 	if (IS_REV_VALID_TIRE(TirePosition) == 1)
 	{
-		TireVelocityKmph[TirePosition] = TIRE_CIRCUMFERENCE_KM * 3600000 / (TireRevolutionCounter[TirePosition] * TIMING_EVENT_PERIOD_MS);
+		TireVelocityKmph[TirePosition] = TireCircumferenceKm[TirePosition] * 3600000 / (TireRevolutionCounter[TirePosition] * TIMING_EVENT_PERIOD_MS);
 		TireRevolutionCounter[TirePosition] = 0;
 	}
 
