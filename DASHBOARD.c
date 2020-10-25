@@ -28,7 +28,7 @@ int main() {
     return 0;
 }
 
-int* uint32Unpacker(uint32 packed_data) {
+int* uint32Unpacker(uint32_t packed_data) {
 
 }
 
