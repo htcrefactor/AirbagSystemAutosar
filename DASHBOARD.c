@@ -29,8 +29,17 @@ int main() {
     return 0;
 }
 
-int* uint32Unpacker(uint32_t packed_data) {
 
+// unpacked_data[0~3]: OCS_{FrontLeft | FrontRight | RearLeft | RearRight}
+// unpacked_data[4~7]: BELT_{FrontLeft | FrontRight | RearLeft | RearRight}
+// unpacked_data[9]: SPEED
+void uint32Unpacker(uint32_t packed_data) {
+    for(int i = 0 ; i < 8 ; i++) {
+        uint32_t mask = 1 << i;
+        unpacked_data[i] = (packed_data & mask) / (1 << i);
+    }
+
+    unpacked_data[8] = packed_data >> 24;
 }
 
 /* uint32Packer() Specifications */
