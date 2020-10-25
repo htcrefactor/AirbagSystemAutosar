@@ -23,8 +23,9 @@ int main() {
     uint32_t belt_rr = 1;
     
     uint32_t result = uint32Packer(speed, ocs_fl, ocs_fr, ocs_rl, ocs_rr, belt_fl, belt_fr, belt_rl, belt_rr);
-    
     printf("%x\n", result);
+
+    uint32Unpacker(result);
     
     return 0;
 }
