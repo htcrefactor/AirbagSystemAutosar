@@ -5,7 +5,7 @@
 #define uint32  __UINT32_TYPE__
 
 // Global Variable(s)
-int unpacked_data[9] = {0};
+// int unpacked_data[9] = {0};
 
 // Function Prototype(s)
 uint32_t uint32Packer(uint32_t speed, uint32_t ocs_fl, uint32_t ocs_fr, uint32_t ocs_rl, uint32_t ocs_rr, uint32_t belt_fl, uint32_t belt_fr, uint32_t belt_rl, uint32_t belt_rr);
