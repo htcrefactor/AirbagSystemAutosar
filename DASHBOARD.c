@@ -5,11 +5,11 @@
 #define uint32  __UINT32_TYPE__
 
 // Global Variable(s)
-// int unpacked_data[9] = {0};
+int unpacked_data[9] = {0};
 
 // Function Prototype(s)
 uint32_t uint32Packer(uint32_t speed, uint32_t ocs_fl, uint32_t ocs_fr, uint32_t ocs_rl, uint32_t ocs_rr, uint32_t belt_fl, uint32_t belt_fr, uint32_t belt_rl, uint32_t belt_rr);
-int* uint32Unpacker(uint32_t packed_data);
+void uint32Unpacker(uint32_t packed_data);
 
 int main() {
     uint32_t speed = 60;
@@ -30,7 +30,7 @@ int main() {
     return 0;
 }
 
-
+/* uint32Unpacker() Specification */
 // unpacked_data[0~3]: OCS_{FrontLeft | FrontRight | RearLeft | RearRight}
 // unpacked_data[4~7]: BELT_{FrontLeft | FrontRight | RearLeft | RearRight}
 // unpacked_data[9]: SPEED
